@@ -9,6 +9,13 @@ const ResetStyled = createGlobalStyle`
   * {
     font-family: ${(props) => props.theme.typography.fontFamily};
     font-size: ${(props) => props.theme.typography.fontSize};
+    font-style: normal;
+  }
+
+  body {
+    background-color: ${(props) => props.theme.pallette.background.default};
+
+    height: 100%;
   }
 
  * {

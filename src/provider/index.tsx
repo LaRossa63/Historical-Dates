@@ -1,4 +1,6 @@
+import { useSelectedDate } from 'hooks';
 import { FC } from 'react';
+import { DateContext } from 'store/Context';
 import { ThemeProvider } from 'styled-components';
 
 import { BaseStyled } from 'theme/BaseStyled';
@@ -11,9 +13,11 @@ interface Props {
 export const AppProvider: FC<Props> = ({ children }) => {
   return (
     <>
-      <ThemeProvider theme={Theme}>
-        <BaseStyled>{children}</BaseStyled>
-      </ThemeProvider>
+      <DateContext.Provider value={useSelectedDate()}>
+        <ThemeProvider theme={Theme}>
+          <BaseStyled>{children}</BaseStyled>
+        </ThemeProvider>
+      </DateContext.Provider>
     </>
   );
 };

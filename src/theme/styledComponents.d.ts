@@ -5,13 +5,13 @@ declare module 'styled-components' {
     pallette: {
       background: {
         default: string;
+        border: string;
       };
 
       text: {
         primary: string;
-        secondary: string;
 
-        title: string;
+        titleList: string;
       };
     };
 

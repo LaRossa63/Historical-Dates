@@ -4,13 +4,13 @@ export const Theme: DefaultTheme = {
   pallette: {
     background: {
       default: '#F4F5F9',
+      border: '#42567a',
     },
 
     text: {
       primary: '#42567A',
-      secondary: '#42567A',
 
-      title: '#3877EE',
+      titleList: '#3877EE',
     },
   },
 
