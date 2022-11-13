@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import styled, { css } from 'styled-components';
+import * as ReactDOMServer from 'react-dom/server';
+import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination as SwiperPagination } from 'swiper';
-import * as ReactDOMServer from 'react-dom/server';
 
 import 'swiper/css';
 import 'swiper/css/pagination';

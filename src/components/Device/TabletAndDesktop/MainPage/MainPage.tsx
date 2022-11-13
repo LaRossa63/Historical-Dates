@@ -27,7 +27,7 @@ const BorderTitle = styled.div`
   height: 120px;
 
   position: absolute;
-  left: -63.5px;
+  left: 13.5px;
   top: 178px;
 
   background: linear-gradient(#3877ee, #ef5da8);

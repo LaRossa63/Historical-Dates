@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 
-import { useDateContext } from 'store/Context';
-
 const Container = styled.div`
   width: calc(100% - 30px);
   height: 100%;
@@ -43,51 +41,7 @@ const Ellipse = styled.ul`
   border-radius: 50%;
 `;
 
-const Item = styled.li`
-  width: 8px;
-  height: 8px;
-
-  background-color: ${(props) => props.theme.pallette.background.border};
-
-  position: absolute;
-  z-index: 2;
-
-  border-radius: 50%;
-
-  &:nth-child(1) {
-    right: 97px;
-    top: 50px;
-  }
-
-  &:nth-child(2) {
-    right: -5px;
-    top: 49.5%;
-  }
-
-  &:nth-child(3) {
-    bottom: 91px;
-    right: 55px;
-  }
-
-  &:nth-child(4) {
-    left: 80px;
-    bottom: 64px;
-  }
-
-  &:nth-child(5) {
-    bottom: 49%;
-    left: -4px;
-  }
-
-  &:nth-child(6) {
-    left: 97px;
-    top: 50px;
-  }
-`;
-
 export const Background = () => {
-  const { allList } = useDateContext();
-
   const el = useRef() as any;
 
   useEffect(() => {
@@ -108,10 +62,7 @@ export const Background = () => {
       <ContainerBlock />
       <ContainerBlock />
 
-      <Ellipse ref={el}>
-        {allList &&
-          allList.map((element) => <Item key={element.id}>{element.id}</Item>)}
-      </Ellipse>
+      <Ellipse ref={el}></Ellipse>
     </Container>
   );
 };
