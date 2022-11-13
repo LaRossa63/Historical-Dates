@@ -50,7 +50,6 @@ export const Background = () => {
     }
 
     gsap.to(el.current, {
-      // полный поворот
       rotation: '+=180',
     });
   });
@@ -62,7 +61,7 @@ export const Background = () => {
       <ContainerBlock />
       <ContainerBlock />
 
-      <Ellipse ref={el}></Ellipse>
+      <Ellipse ref={el} />
     </Container>
   );
 };

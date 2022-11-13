@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination as SwiperPagination } from 'swiper';
 
@@ -13,11 +13,16 @@ interface Props {
   device?: string;
 }
 
-const Container = styled.div`
-  margin-top: 78px;
+const Container = styled.div<{ device?: string }>`
+  ${(props) =>
+    props.device === 'TabletAndDesktop'
+      ? css`
+          margin-top: 78px;
+        `
+      : null}
 `;
 
-const SwiperStyled = styled(Swiper)`
+const SwiperStyled = styled(Swiper)<{ device?: string }>`
   & .swiper-pagination-bullet {
     opacity: 0.4;
 
@@ -32,17 +37,27 @@ const SwiperStyled = styled(Swiper)`
   & .swiper-pagination-bullet-active {
     opacity: 1;
 
-    width: 56px;
-    height: 56px;
+    ${(props) =>
+      props.device === 'TabletAndDesktop'
+        ? css`
+            width: 56px;
+            height: 56px;
 
-    padding-top: 12px;
+            padding-top: 12px;
 
-    background-color: #f4f5f9;
-    border: 1px solid rgba(48, 62, 88, 0.5);
+            background-color: #f4f5f9;
+            border: 1px solid rgba(48, 62, 88, 0.5);
+          `
+        : null}
   }
 
   & .swiper-pagination-bullet-active > * {
-    display: block;
+    ${(props) =>
+      props.device === 'TabletAndDesktop'
+        ? css`
+            display: block;
+          `
+        : null}
   }
 `;
 
@@ -66,11 +81,12 @@ export const Pagination: FC<Props> = ({ device }) => {
   };
 
   return (
-    <Container>
+    <Container device={device}>
       <SwiperStyled
         pagination={pagination}
         modules={[SwiperPagination]}
         onSlideChange={handleChangeIndexPage}
+        device={device}
       >
         {allList &&
           allList.map((element) => (

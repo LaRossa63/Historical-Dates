@@ -144,9 +144,9 @@ export const List: FC<Props> = ({ device }) => {
     <ContainerSwiperStyled
       slidesPerView={device === 'TabletAndDesktop' ? 3 : 1.5}
       spaceBetween={15}
-      device={device}
       navigation={device === 'TabletAndDesktop'}
       modules={[Navigation]}
+      device={device}
     >
       {currentList &&
         currentList.list.map((element) => (

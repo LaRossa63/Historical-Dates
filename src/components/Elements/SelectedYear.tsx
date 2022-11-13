@@ -3,18 +3,25 @@ import styled, { css } from 'styled-components';
 
 import { useDateContext } from 'store/Context';
 
+interface Props {
+  device?: string;
+}
+
 const Container = styled.div<{ device?: string }>`
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
 
   margin-top: 56px;
-  gap: 50px;
+  padding: 0 10px;
+  gap: 30px;
 
   ${(props) =>
     props.device === 'TabletAndDesktop'
       ? css`
+          flex-wrap: wrap;
+
           margin-top: 96px;
-          align-items: center;
         `
       : null}
 `;
@@ -38,7 +45,7 @@ const Text = styled.span<{ mode: string; device?: string }>`
       : null}
 `;
 
-export const SelectedYear: FC<{ device?: string }> = ({ device }) => {
+export const SelectedYear: FC<Props> = ({ device }) => {
   const { currentList } = useDateContext();
 
   return (

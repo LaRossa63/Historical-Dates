@@ -16,7 +16,7 @@ export const MainPage = () => {
   return (
     <Container>
       <ContainerTitle>
-        <Title mode="Mobile">
+        <Title>
           Исторические
           <br />
           даты
