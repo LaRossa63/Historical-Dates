@@ -24,7 +24,6 @@ const Container = styled.div<{ device?: string }>`
       width: 120px;
       height: 88px;
 
-      margin-top: 150px;
       margin-left: 60px;
       gap: 20px;
     `}

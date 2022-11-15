@@ -19,9 +19,15 @@ const Container = styled.div<{ device?: string }>`
   ${(props) =>
     props.device === 'TabletAndDesktop'
       ? css`
+          width: 100%;
           flex-wrap: wrap;
 
-          margin-top: 96px;
+          gap: 86px;
+
+          position: absolute;
+          top: 365px;
+          z-index: 10;
+          right: 10px;
         `
       : null}
 `;

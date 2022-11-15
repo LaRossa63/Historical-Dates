@@ -18,8 +18,7 @@ const Container = styled.div`
 `;
 
 const ContainerTitle = styled.div`
-  padding-top: 170px;
-  margin-left: 78px;
+  position: absolute;
 `;
 
 const BorderTitle = styled.div`
@@ -41,7 +40,7 @@ export const MainPage = () => {
       <ContainerTitle>
         <BorderTitle />
 
-        <Title mode="TabletAndDesktop">
+        <Title device="TabletAndDesktop">
           Исторические
           <br />
           даты
