@@ -192,6 +192,10 @@ export const Pagination: FC<Props> = ({ device }) => {
   const { handleChangeIndexPage, allList, currentIndexPage } = useDateContext();
 
   useEffect(() => {
+    if (device !== 'TabletAndDesktop') {
+      return;
+    }
+
     gsap.to('.swiper-pagination', {
       rotation: '+=360',
     });
